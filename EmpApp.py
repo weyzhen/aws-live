@@ -38,7 +38,6 @@ def AddEmp():
     emp_id = request.args.get("emp_id")
     emp_name = request.args.get('emp_name')
     gender = request.args.get('gender')
-    return redirect(url_for("AddEmp",addemp=addemp))
     else:
     emp_id = request.form['emp_id']
     first_name = request.form['first_name']
