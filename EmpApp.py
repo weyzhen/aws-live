@@ -34,11 +34,7 @@ def about():
 
 @app.route("/addemp", methods=['GET','POST'])
 def AddEmp():
-    if request.method == "POST":
-    emp_id = request.args.get("emp_id")
-    emp_name = request.args.get('emp_name')
-    gender = request.args.get('gender')
-    else:
+    emp_id = request.values['emp_id']
     emp_id = request.form['emp_id']
     first_name = request.form['first_name']
     last_name = request.form['last_name']
