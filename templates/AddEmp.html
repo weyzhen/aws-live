@@ -1,35 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Add Employee Information</title>
+	<title>Employee Database</title>
 </head>
 <center>
 	<font color="black" size="4" style="font-family: avenir">
 
-		<h1 style="color: DodgerBlue">Employee Database</h1>
+		<h1 style="color: lightskyblue">Employee Database</h1>
 
-		<body bgcolor="lightgrey">
+		<body bgcolor="azure">
 
-			<form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
-
-				<button type="submit" formaction="/GetEmp" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">GET EMPLOYEE INFORMATION</button><br><br>
-
-		  		Employee ID:<br> <input style="height:25px;font-size:14pt; color:grey;" type="number" name="emp_id" autofocus size="40"><br><br>
-
-		  		First Name:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="first_name" ><br><br>
-
-		  		Last Name:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="last_name"><br><br>
-
-		  		Primary Skills:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="pri_skill"><br><br>
-
-		  		Location:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="location"><br><br>
-
-		  		Image: <input type=file name="emp_image_file" style="height:25px;font-size:14pt;color:grey;"> <br><br>
-
-		  		<button type="submit" style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">UPDATE DATABASE</button>
-
+			<form action="/addemp" autocomplete="on" method = "GET" enctype="multipart/form-data">
+            	<table>
+        		<tr style="color:white;background-color: orange">
+            	<th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Contact No</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Image</th>
+                <th>Hire Date</th>
+                <th>Attendance</th>
+            	<th>Actions</th>
+        		</tr>
+            	<tr style="background-color: whitesmoke;text-align: center;">
+                <td>{{ emp_id }}</td>
+                <td>{{ emp_name }}</td>
+                <td>{{ gender }}</td>
+                <td>{{ contact }}</td>
+                <td>{{ position }}</td>
+                <td>{{ salary }}</td>
+                <td>123</td>
+                <td>{{ date_created.date() }}</td>
+                <td>HI</td>
+                <td>
+                    <a href="/delete/{{employee.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{employee.id}}">Update</a>
+                </td>
+            	</tr>
+                
+    			</table>
 			</form>
-<a href="/about">About Us</a>
+            <form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
+            <table>
+            <tr style="color:white;background-color: orange">
+            	<th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Contact No</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Image</th>
+                <th>Hire Date</th>
+                <th>Attendance</th>
+            	<th>Actions</th>
+        		</tr>
+            <tr style="background-color: whitesmoke">
+                <td><input style="height:25px;font-size:14pt; color:grey;" type="number" name="emp_id" autofocus size="40"></td>
+                <td><input style="height:25px;font-size:14pt;color:grey;" type="text" name="name" ></td>
+                <td><input style="height:25px;font-size:14pt;color:grey;" type="text" name="gender"></td>
+                <td><input style="height:25px;font-size:14pt;color:grey;" type="number" name="contact"></td>
+                <td><input style="height:25px;font-size:14pt;color:grey;" type="text" name="position"></td>
+                <td><input style="height:25px;font-size:14pt;color:grey;" type="number" name="salary"></td>
+                <td><input type=file name="emp_image_file" style="height:25px;font-size:14pt;color:grey;"></td>
+                <td></td>
+                <td></td>
+                <td><button type="submit" style="background: orange; height: 45px; width: 200px; color: white; size: 5; font:oblique;">INSERT DATABASE</button></td>
+                </tr>
+            </table>
+            </form>
 		</body>
 
 	</font>
