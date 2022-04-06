@@ -32,10 +32,12 @@ def about():
     return render_template('www.intellipaat.com')
 
 
-@app.route("/addemp", methods=['POST'])
+@app.route("/addemp", methods=['GET','POST'])
 def AddEmp():
     if request.method == "POST":
     addemp = request.form["emp_id"]
+    emp_name = request.args.get('emp_name')
+    gender = request.args.get('gender')
     return redirect(url_for("AddEmp",addemp=addemp))
     else:
     emp_id = request.form['emp_id']
