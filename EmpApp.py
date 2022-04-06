@@ -34,6 +34,10 @@ def about():
 
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
+    if request.method == "POST":
+    addemp = request.form["emp_id"]
+    return redirect(url_for("AddEmp",addemp=addemp))
+    else:
     emp_id = request.form['emp_id']
     first_name = request.form['first_name']
     last_name = request.form['last_name']
