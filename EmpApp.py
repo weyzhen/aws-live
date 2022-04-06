@@ -79,7 +79,7 @@ def AddEmp():
         cursor.close()
 
     print("all modification done...")
-    return render_template('AddEmp.html', name=emp_name)
+    return render_template('AddEmp.html', emp_name=emp_name)
 
 
 if __name__ == '__main__':
