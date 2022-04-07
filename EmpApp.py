@@ -87,10 +87,15 @@ def AddEmp():
 def GetEmp():
     emp_id = request.values.get('emp_id')
     first_name = request.values.get('first_name')
+    last_name = request.values.get('last_name')
     gender = request.values.get('gender')
     contact = request.values.get('contact')
     position = request.values.get('position')
     salary = request.values.get('salary')
+    
+    select_sql = "SELECT FROM employee VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    cursor = db_conn.cursor()
+    
     return render_template('GetEmp.html')   
 
 
