@@ -93,7 +93,7 @@ def GetEmp():
     position = request.values.get('position')
     salary = request.values.get('salary')
     
-    insert_sql = "SELECT * FROM employee"
+    select_sql = "SELECT * FROM employee"
     cursor = db_conn.cursor()
     cursor.execute(select_sql)
     db_conn.commit()
