@@ -85,8 +85,8 @@ def AddEmp():
 
 @app.route("/getemp", methods=['GET'])
 def GetEmp():
-    emp_id = request.args.get('emp_id')
-    return render_template('GetEmp.html' name=emp_id)
+    emp_id = request.values.get('emp_id')
+    return "Hello" + emp_id
 
 
 if __name__ == '__main__':
