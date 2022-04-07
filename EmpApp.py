@@ -32,12 +32,8 @@ def about():
     return render_template('www.intellipaat.com')
 
 
-@app.route("/addemp", methods=['GET','POST'])
+@app.route("/addemp", methods=['POST'])
 def AddEmp():
-    if request.method == "GET":
-    emp_id = request.args.get('emp_id')
-    return render_template('AddEmp.html', name=emp_name)
-    else:
     emp_id = request.form['emp_id']
     first_name = request.form['first_name']
     last_name = request.form['last_name']
@@ -86,6 +82,11 @@ def AddEmp():
 
     print("all modification done...")
     return render_template('AddEmp.html', name=emp_name)
+
+@app.route("/getemp", methods=['GET'])
+def GetEmp():
+    emp_id = request.args.get('emp_id')
+    return
 
 
 if __name__ == '__main__':
