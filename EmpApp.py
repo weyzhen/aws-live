@@ -93,9 +93,13 @@ def GetEmp():
     position = request.values.get('position')
     salary = request.values.get('salary')
     
-    employee.query.all()
+    insert_sql = "SELECT * FROM employee"
+    cursor = db_conn.cursor()
+    cursor.execute(select_sql)
+    db_conn.commit()
+    emp_name = "" + first_name + " " + last_name
     
-    return render_template('GetEmp.html')   
+    return render_template('GetEmp.html', name=emp_name)   
 
 
 if __name__ == '__main__':
