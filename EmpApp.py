@@ -95,7 +95,7 @@ def GetEmp():
     
     employee.query.all()
     
-    return render_template('GetEmp.html' employee=employee)   
+    return render_template('GetEmp.html')   
 
 
 if __name__ == '__main__':
