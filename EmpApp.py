@@ -93,7 +93,7 @@ def GetEmp():
     position = request.values.get('position')
     salary = request.values.get('salary')
     
-    employee = employee.query.filter_by(emp_id=emp_id).first_or_404()
+    employee.query.all()
     
     return render_template('GetEmp.html' employee=employee)   
 
