@@ -97,9 +97,9 @@ def GetEmp():
     cursor = db_conn.cursor()
     cursor.execute(select_sql)
     db_conn.commit()
-    emp_name = "" + first_name + " " + last_name
+    cursor.close()
     
-    return render_template('GetEmp.html', name=emp_name)   
+    return render_template('GetEmp.html')   
 
 
 if __name__ == '__main__':
