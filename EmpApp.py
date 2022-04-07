@@ -85,9 +85,13 @@ def AddEmp():
 
 @app.route("/getemp", methods=['GET'])
 def GetEmp():
+    emp_id = request.form.get('emp_id')
     first_name = request.form.get('first_name')
-    last_name = request.form.get('last_name')
-    return "Your name is "+first_name + last_name   
+    gender = request.form.get('gender')
+    contact = request.form.get('contact')
+    position = request.form.get('position')
+    salary = request.form.get('salary')
+    return render_template('GetEmp.html')   
 
 
 if __name__ == '__main__':
