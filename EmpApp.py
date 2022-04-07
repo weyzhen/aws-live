@@ -93,8 +93,9 @@ def GetEmp():
     position = request.values.get('position')
     salary = request.values.get('salary')
     
-    select_sql = "SELECT FROM employee VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    select_sql = "SELECT * FROM employee;"
     cursor = db_conn.cursor()
+    cursor.execute(select_sql)
     
     return render_template('GetEmp.html')   
 
