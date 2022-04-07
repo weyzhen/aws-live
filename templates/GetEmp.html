@@ -1,29 +1,51 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Get Employee Information</title>
+	<title>Employee List</title>
 </head>
 <center>
-	<font color="black" size="5" style="font-family: avenir">
+	<font color="black" size="4" style="font-family: avenir">
 
-		<h1 style="color: DodgerBlue">Employee Information</h1>
+		<h1 style="color: lightskyblue">Employee Database</h1>
 
-		<body bgcolor="lightgrey">
+		<body bgcolor="azure">
 
-			<form action="/fetchdata" autocomplete="on" method="POST">
-
-				<h2 style="color: grey">Enter Employee ID</h2>
-
-		  		Employee ID:<br> <input style="height:25px;font-size:14pt;" type="number" name="emp_id" autofocus size="40"><br><br>
-
-
-		  		<button type="submit" style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">FETCH INFO</button><br><br>
-
-		  		<button type="submit" formaction="http://3.134.115.108:80/" style="background: white	; height: 45px; width: 200px; color: black; size: 5; font:oblique;" method="GET">GO TO UPDATE DATABASE PAGE</button>
-
+			<form action="/addemp" autocomplete="on" method = "GET" enctype="multipart/form-data">
+            	<table>
+        		<tr style="color:white;background-color: orange">
+            	<th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Contact No</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Image</th>
+                <th>Hire Date</th>
+                <th>Attendance</th>
+            	<th>Actions</th>
+        		</tr>
+            	<tr style="background-color: whitesmoke;text-align: center;">
+                <td>{{ emp_id }}</td>
+                <td>{{ emp_name }}</td>
+                <td>{{ gender }}</td>
+                <td>{{ contact }}</td>
+                <td>{{ position }}</td>
+                <td>{{ salary }}</td>
+                <td>123</td>
+                <td>{{ date_created.date() }}</td>
+                <td>HI</td>
+                <td>
+                    <a href="/delete/{{employee.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{employee.id}}">Update</a>
+                </td>
+            	</tr>
+                
+    			</table>
 			</form>
 
 		</body>
+
 	</font>
 </center>
 </html>
