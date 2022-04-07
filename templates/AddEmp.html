@@ -9,40 +9,6 @@
 		<h1 style="color: lightskyblue">Employee Database</h1>
 
 		<body bgcolor="azure">
-
-			<form action="/addemp" autocomplete="on" method = "GET" enctype="multipart/form-data">
-            	<table>
-        		<tr style="color:white;background-color: orange">
-            	<th>ID</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Contact No</th>
-                <th>Position</th>
-                <th>Salary</th>
-                <th>Image</th>
-                <th>Hire Date</th>
-                <th>Attendance</th>
-            	<th>Actions</th>
-        	</tr>
-            	<tr style="background-color: whitesmoke;text-align: center;">
-                <td>{{ emp_id }}</td>
-                <td>{{ emp_name }}</td>
-                <td>{{ gender }}</td>
-                <td>{{ contact }}</td>
-                <td>{{ position }}</td>
-                <td>{{ salary }}</td>
-                <td>123</td>
-                <td>{{ salary }}</td>
-                <td>HI</td>
-                <td>
-                    <a href="/delete/{{ emp_id }}">Delete</a>
-                    <br>
-                    <a href="/update/{{ emp_id }}">Update</a>
-                </td>
-            	</tr>
-                
-    			</table>
-			</form>
             <form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
             <table>
             <tr style="color:white;background-color: orange">
@@ -68,6 +34,7 @@
                 <td><button type="submit" style="background: orange; height: 45px; width: 200px; color: white; size: 5; font:oblique;">INSERT DATABASE</button></td>
                 </tr>
             </table>
+		    <a href="GetEmp.html">Employee List</a>
             </form>
 		</body>
 
